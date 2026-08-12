@@ -1,6 +1,6 @@
 # 当前可用 Skill 全表
 
-盘点时间：2026-08-12。当前会话共有 80 个可用条目、75 个唯一名称。
+盘点时间：2026-08-12。当前会话共有 86 个可用条目、81 个唯一名称。
 
 ## Codex 系统内置（5）
 
@@ -12,7 +12,13 @@
 - `skill-creator`
 - `skill-installer`
 
-## 本地 Codex Skill（21）
+## Codex 功能注入 Skill（1）
+
+安装方式：启用 Codex Chronicle 与记忆功能后由 Codex 注入，不从本仓库复制。
+
+- `chronicle`
+
+## 本地 Codex Skill（24）
 
 安装位置：`~/.codex/skills/<name>`。本仓库均已备份到 `codex-skills/`。
 
@@ -21,7 +27,9 @@
 - `figma`
 - `figma-implement-design`
 - `find-skills`
+- `frontend-app-builder`
 - `frontend-design`
+- `frontend-skill`
 - `gh-address-comments`
 - `gh-fix-ci`
 - `imagegen`
@@ -35,6 +43,7 @@
 - `speech`
 - `transcribe`
 - `ux-heuristics`
+- `vercel-deploy`
 - `visual-design-foundations`
 - `yeet`
 
@@ -70,6 +79,13 @@
 - `lark-wiki`
 - `lark-workflow-meeting-summary`
 - `lark-workflow-standup-report`
+
+## 其他本地 Agent Skill（2）
+
+安装位置：`~/.agents/skills/<name>`。本仓库均已备份到 `agent-skills/`。
+
+- `better-icons`
+- `seo-audit`
 
 ## Codex 内置插件（6）
 
