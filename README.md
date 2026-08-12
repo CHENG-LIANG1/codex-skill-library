@@ -4,14 +4,14 @@
 
 ## 当前内容
 
-- `codex-skills/`：21 个安装到 `~/.codex/skills` 的 Skill。
-- `agent-skills/`：26 个安装到 `~/.agents/skills` 的飞书/Lark Skill。
-- `catalog/active-skills.md`：当前会话可用的全部 80 个 Skill 条目及安装方式。
+- `codex-skills/`：24 个安装到 `~/.codex/skills` 的可移植 Skill。
+- `agent-skills/`：28 个安装到 `~/.agents/skills` 的可移植 Skill，其中包含 26 个飞书/Lark Skill。
+- `catalog/active-skills.md`：当前会话可用的全部 86 个 Skill 条目及安装方式。
 - `catalog/runtime-only-skills.md`：系统/插件运行时 Skill，以及仅存在于缓存、当前未启用的 Skill。
-- `scripts/install.sh`：把仓库中的 47 个可移植 Skill 安装到本机；已有同名目录会跳过，不会覆盖。
+- `scripts/install.sh`：把仓库中的 52 个可移植 Skill 安装到本机；已有同名目录会跳过，不会覆盖。
 - `THIRD_PARTY_NOTICES.md`：上游来源与许可证说明。
 
-80 个“可用条目”中有 5 个重名实现，因此对应 75 个唯一名称。仓库实际备份 47 个可移植目录；其余 33 个由 Codex 系统或插件管理。
+86 个“可用条目”中有 5 个重名实现，因此对应 81 个唯一名称。仓库实际备份 52 个可移植目录；其余 34 个由 Codex 系统、功能或插件管理。
 
 ## Skill 分类目录
 
@@ -27,7 +27,15 @@
 | `skill-creator` | 创建或更新结构清晰、可复用的 Skill。 |
 | `skill-installer` | 从 OpenAI curated 列表或 GitHub 仓库安装 Skill。 |
 
-### 本地 Codex Skill（21）
+### Codex 功能注入 Skill（1）
+
+这类 Skill 由 Codex 功能按需注入，不复制到公开仓库。
+
+| Skill | 功能 | 作用 |
+|---|---|---|
+| `chronicle` | Chronicle | 在启用屏幕记录与记忆时读取近期屏幕上下文。 |
+
+### 本地 Codex Skill（24）
 
 这类 Skill 收录在 [`codex-skills/`](codex-skills)，安装目标是 `~/.codex/skills`。
 
@@ -38,7 +46,9 @@
 | [`figma`](codex-skills/figma) | 设计开发 | 获取 Figma 设计上下文、变量和素材并辅助落地代码。 |
 | [`figma-implement-design`](codex-skills/figma-implement-design) | 设计开发 | 按 Figma 节点实现高还原度的生产代码。 |
 | [`find-skills`](codex-skills/find-skills) | Skill 管理 | 在开放 Skill 生态中搜索、评估并安装合适的 Skill。 |
+| [`frontend-app-builder`](codex-skills/frontend-app-builder) | 前端开发 | 从视觉概念、设计系统到浏览器验证构建完整前端应用。 |
 | [`frontend-design`](codex-skills/frontend-design) | 前端设计 | 指导更有辨识度的界面、排版、布局和动效设计。 |
+| [`frontend-skill`](codex-skills/frontend-skill) | 前端设计 | 用克制构图、图像层级和动效打造视觉导向的界面。 |
 | [`gh-address-comments`](codex-skills/gh-address-comments) | GitHub | 检查并处理当前 PR 的评审意见和 Issue 评论。 |
 | [`gh-fix-ci`](codex-skills/gh-fix-ci) | GitHub | 分析 GitHub Actions 失败日志并修复 CI 问题。 |
 | [`imagegen`](codex-skills/imagegen) | 图像 | 通过 OpenAI Image API 生成、编辑、抠图或批量制作图片。 |
@@ -52,6 +62,7 @@
 | [`speech`](codex-skills/speech) | 音频 | 通过 OpenAI Audio API 生成旁白、语音和批量音频。 |
 | [`transcribe`](codex-skills/transcribe) | 音频 | 将音频或视频转写为文本，并可进行说话人区分。 |
 | [`ux-heuristics`](codex-skills/ux-heuristics) | UX | 用 Nielsen、Krug、WCAG 等方法进行可用性审计。 |
+| [`vercel-deploy`](codex-skills/vercel-deploy) | 部署 | 使用 Vercel CLI 或备用部署脚本发布应用与网站。 |
 | [`visual-design-foundations`](codex-skills/visual-design-foundations) | 视觉设计 | 建立字体、颜色、间距和图标等视觉设计基础。 |
 | [`yeet`](codex-skills/yeet) | GitHub | 一次完成暂存、提交、推送和创建 GitHub PR。 |
 
@@ -87,6 +98,15 @@
 | [`lark-wiki`](agent-skills/lark-wiki) | 知识库 | 管理知识空间、成员和 Wiki 文档节点层级。 |
 | [`lark-workflow-meeting-summary`](agent-skills/lark-workflow-meeting-summary) | 工作流 | 汇总指定时间范围的会议纪要并生成结构化报告。 |
 | [`lark-workflow-standup-report`](agent-skills/lark-workflow-standup-report) | 工作流 | 汇总指定日期的日程和未完成任务，生成站会摘要。 |
+
+### 其他 Agent Skill（2）
+
+这类 Skill 收录在 [`agent-skills/`](agent-skills)，安装目标同样是 `~/.agents/skills`。
+
+| Skill | 分类 | 作用 |
+|---|---|---|
+| [`better-icons`](agent-skills/better-icons) | 图标 | 搜索 Iconify 图标库并获取、批量下载或同步 SVG。 |
+| [`seo-audit`](agent-skills/seo-audit) | SEO | 审计站点的抓取、索引、技术基础、页面内容与权威性问题。 |
 
 ### Codex 内置插件 Skill（6）
 
