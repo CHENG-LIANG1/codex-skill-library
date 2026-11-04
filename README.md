@@ -4,14 +4,14 @@
 
 ## 当前内容
 
-- `codex-skills/`：21 个安装到 `~/.codex/skills` 的 Skill。
+- `codex-skills/`：22 个安装到 `~/.codex/skills` 的 Skill。
 - `agent-skills/`：26 个安装到 `~/.agents/skills` 的飞书/Lark Skill。
-- `catalog/active-skills.md`：当前会话可用的全部 80 个 Skill 条目及安装方式。
+- `catalog/active-skills.md`：2026-08-12 基线与后续增量收录的 81 个 Skill 条目及安装方式。
 - `catalog/runtime-only-skills.md`：系统/插件运行时 Skill，以及仅存在于缓存、当前未启用的 Skill。
-- `scripts/install.sh`：把仓库中的 47 个可移植 Skill 安装到本机；已有同名目录会跳过，不会覆盖。
+- `scripts/install.sh`：把仓库中的 48 个可移植 Skill 安装到本机；已有同名目录会跳过，不会覆盖。
 - `THIRD_PARTY_NOTICES.md`：上游来源与许可证说明。
 
-80 个“可用条目”中有 5 个重名实现，因此对应 75 个唯一名称。仓库实际备份 47 个可移植目录；其余 33 个由 Codex 系统或插件管理。
+81 个收录条目中有 5 个重名实现，因此对应 76 个唯一名称。仓库实际备份 48 个可移植目录；其余 33 个由 Codex 系统或插件管理。这是历史基线与增量安装记录，不代表当前运行时的完整实时清单。
 
 ## Skill 分类目录
 
@@ -27,7 +27,7 @@
 | `skill-creator` | 创建或更新结构清晰、可复用的 Skill。 |
 | `skill-installer` | 从 OpenAI curated 列表或 GitHub 仓库安装 Skill。 |
 
-### 本地 Codex Skill（21）
+### 本地 Codex Skill（22）
 
 这类 Skill 收录在 [`codex-skills/`](codex-skills)，安装目标是 `~/.codex/skills`。
 
@@ -42,6 +42,7 @@
 | [`gh-address-comments`](codex-skills/gh-address-comments) | GitHub | 检查并处理当前 PR 的评审意见和 Issue 评论。 |
 | [`gh-fix-ci`](codex-skills/gh-fix-ci) | GitHub | 分析 GitHub Actions 失败日志并修复 CI 问题。 |
 | [`imagegen`](codex-skills/imagegen) | 图像 | 通过 OpenAI Image API 生成、编辑、抠图或批量制作图片。 |
+| [`impeccable`](codex-skills/impeccable) | 前端设计 / UX | 审查与优化界面层级、排版、响应式、可访问性和交互细节，附带设计检测引擎启动器。 |
 | [`jupyter-notebook`](codex-skills/jupyter-notebook) | 数据与实验 | 创建、编辑并验证实验或教程型 Jupyter Notebook。 |
 | [`netlify-deploy`](codex-skills/netlify-deploy) | 部署 | 使用 Netlify CLI 发布预览或生产站点。 |
 | [`pdf`](codex-skills/pdf) | 文档 | 读取、创建、渲染并检查 PDF 内容和版式。 |
@@ -157,6 +158,8 @@ AGENT_SKILL_TARGET=/path/to/agent/skills \
 ```
 
 安装完成后，新开一个 Codex 任务，让 Skill 清单重新载入。
+
+Impeccable 4.8.0 的恢复安装同样使用上面的脚本。安装后可运行 `$impeccable audit` 检查界面，或 `$impeccable polish` 做细节打磨。首次使用启动器会按校验清单下载对应平台的检测引擎，需要联网；本仓库不保存引擎二进制，也不自动启用 hooks。来源、版本和恢复命令见 [`codex-skills/impeccable/UPSTREAM.md`](codex-skills/impeccable/UPSTREAM.md)。
 
 ## 更新方式
 

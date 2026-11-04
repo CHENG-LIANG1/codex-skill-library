@@ -1,6 +1,6 @@
 # 当前可用 Skill 全表
 
-盘点时间：2026-08-12。当前会话共有 80 个可用条目、75 个唯一名称。
+基线盘点时间：2026-08-12；增量更新：2026-11-05，加入 Impeccable 4.8.0。该快照共收录 81 个条目、76 个唯一名称，不代表当前运行时的完整实时清单。
 
 ## Codex 系统内置（5）
 
@@ -12,7 +12,7 @@
 - `skill-creator`
 - `skill-installer`
 
-## 本地 Codex Skill（21）
+## 本地 Codex Skill（22）
 
 安装位置：`~/.codex/skills/<name>`。本仓库均已备份到 `codex-skills/`。
 
@@ -25,6 +25,7 @@
 - `gh-address-comments`
 - `gh-fix-ci`
 - `imagegen`
+- `impeccable`（界面审查、响应式与可访问性优化；4.8.0，Apache-2.0）
 - `jupyter-notebook`
 - `netlify-deploy`
 - `pdf`
@@ -121,4 +122,4 @@
 
 ## 重名说明
 
-以下名称同时存在本地版与系统/插件版：`imagegen`、`pdf`、`gh-address-comments`、`gh-fix-ci`、`yeet`。因此 80 个条目对应 75 个唯一名称。
+以下名称同时存在本地版与系统/插件版：`imagegen`、`pdf`、`gh-address-comments`、`gh-fix-ci`、`yeet`。因此 81 个条目对应 76 个唯一名称。
